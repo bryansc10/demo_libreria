@@ -1,0 +1,39 @@
+# Directorio de salida de Maven
+target/
+
+# Archivos generados por IDEs
+.idea/
+*.iml
+
+# Archivos de configuración locales
+.settings/
+
+# Archivos de respaldo
+*.swp
+*~
+
+# Archivos de logs
+logs/
+
+# Archivos de caché
+.cache/
+
+# Archivos de base de datos
+*.h2.db
+
+# Archivos de cobertura de código
+coverage/
+
+# Archivos de generación de documentación
+docs/
+
+# Archivos de configuración de Eclipse
+.classpath
+.project
+
+# Archivos de configuración de Maven
+.mvn/
+
+# Archivos
+dev.properties
+persistence.xml
