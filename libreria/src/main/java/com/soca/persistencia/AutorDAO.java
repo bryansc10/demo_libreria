@@ -1,21 +1,34 @@
 package com.soca.persistencia;
 
-import com.soca.entidades.Libro;
+import com.soca.entidades.Autor;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
 
-public class LibroDAO {
+public class AutorDAO {
 	private final EntityManagerFactory emf = Persistence.createEntityManagerFactory("LibreriaPU");
 	private final EntityManager em = emf.createEntityManager();
 	
 	public void actualizarAlta(int id, boolean alta) throws Exception {
-		Libro libro = em.find(Libro.class, id);
-		libro.setAlta(alta);
+		Autor autor = em.find(Autor.class, id);
+		autor.setAlta(alta);
 		
 		em.getTransaction().begin();
-		em.merge(libro);
+		em.merge(autor);
+		em.getTransaction().commit();
+		
+		em.close();
+		emf.close();
+	}
+	
+	public void crearAutor(String nombre, Boolean alta) throws Exception {
+		Autor autorNuevo = new Autor();
+		autorNuevo.setNombre(nombre);
+		autorNuevo.setAlta(alta);
+		
+		em.getTransaction().begin();
+		em.persist(autorNuevo);
 		em.getTransaction().commit();
 		
 		em.close();
