@@ -97,4 +97,11 @@ public class Libro {
 	public void setEditorial(Editorial editorial) {
 		this.editorial = editorial;
 	}
+
+	@Override
+	public String toString() {
+		return String.format("%-4s %-50s %-5s %-5s %-4s %-50s %-50s", isbn, titulo, anio, ejemplares, alta, autor.getNombre(), editorial.getNombre());
+	}
+	
+	
 }

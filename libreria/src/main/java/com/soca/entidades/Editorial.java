@@ -49,4 +49,9 @@ public class Editorial {
 	public void setAlta(Boolean alta) {
 		this.alta = alta;
 	}
+
+	@Override
+	public String toString() {
+		return String.format("%-4s %-50s %-10s", id_editorial, nombre, alta);
+	}
 }
